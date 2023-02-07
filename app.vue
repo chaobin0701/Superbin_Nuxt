@@ -1,4 +1,11 @@
 <script setup>
+import { ref, onMounted, provide } from "vue";
+/* 数据 */
+import userInfo from "./assets/json/userInfo.json";
+import mobilePage from "./assets/json/mobilePage.json";
+import PCPage from "./assets/json/PCPage.json";
+import other from "./assets/json/other.json";
+
 // import { useScroll } from "@vueuse/core";
 // const bodyEle = document.body
 // const { x, y} = useScroll(bodyEle)
@@ -6,6 +13,10 @@
 //   window.scrollTo(0, 0);
 // }
 
+provide("userInfo", userInfo);
+provide("mobilePage", mobilePage);
+provide("PCPage", PCPage);
+provide("other", other);
 </script>
 
 <template>
@@ -13,7 +24,7 @@
     <!-- 顶部区域 -->
     <AppHeader class="fixed top-0 z-50"></AppHeader>
     <!-- 个人信息区域 -->
-    <MyInfo class="userInfo"></MyInfo>
+    <MyInfo class="mt-16"></MyInfo>
     <!-- 个人描述区域 -->
     <AboutMe></AboutMe>
     <!-- 项目经验区域 -->
